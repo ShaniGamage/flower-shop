@@ -221,7 +221,30 @@ header{
     margin: 1rem 0;
 }
 
+/*-------------add product page ------*/
+.add-product{
+    background-image: url('../images/back-image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
+.add-product form{
+    width: 50vw;
+    margin: 2rem auto;
+    background: var(--white-alpha-40);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    border: 1px solid #fef0ea;
+}
+
+.add-product form label{
+    text-transform: capitalize;
+    color: var(--pink);
+}
+
+.add-product form textarea{
+    height: 200px;
+}
 
 /*------media screen-----*/
 @media (max-width:991px){
