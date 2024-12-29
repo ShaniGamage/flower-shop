@@ -12,25 +12,27 @@ if(isset($_POST['logout'])){
     header('location:login.php');
 }
 
-/* ----------adding products to database -------------*/ 
+
+
+/* ----------------------------adding products to database------------------------------*/ 
 if(isset($_POST['add_product'])){
     $product_name = mysqli_real_escape_string($conn,$_POST['name']);
     $product_price = mysqli_real_escape_string($conn,$_POST['price']);
     $product_detail = mysqli_real_escape_string($conn,$_POST['product_detail']);
-    $product_image = $_FILES['image']['name'];
+    $image = $_FILES['image']['name'];
     $image_size = $_FILES['image']['size'];
     $image_tmp_name= $_FILES['image']['tmp_name'];
-    $image_folder= '/images'.$product_image;
+    $image_folder= 'images/'.$image;
 
     $select_product_name = mysqli_query($conn,"SELECT name FROM `products` WHERE name='$product_name'") or die("query failed");
     if(mysqli_num_rows($select_product_name) >0){
         $message[]='product name already exists';
     }else{
         $insert_product= mysqli_query($conn,"INSERT INTO `products` (`name`,`price`,`product_detail`,`image`)
-        VALUES ('$product_name','$product_price','$product_detail','$product_image')") or die('query failed');
+        VALUES ('$product_name','$product_price','$product_detail','$image')") or die('query failed');
 
         if($insert_product){
-            if($image_size > 2000000){
+            if($image_size > 5000000){
                 $message[]= 'product image size is too large';
             }else{
                 move_uploaded_file($image_tmp_name,$image_folder);
@@ -38,6 +40,12 @@ if(isset($_POST['add_product'])){
             }
         }
     }
+    /*------------------------------------------------------------------------------------------------ */
+
+
+
+    /*-------------------------deleting product from database----------------------------------------- */
+
 }
 
 ?>
@@ -88,6 +96,33 @@ if(isset($_POST['add_product'])){
             <input type="submit" name="add_product" value="add product" class="btn">
         </form>
      </section>
+
+
+     <!-------------------------------product showing section---------------------------------------------------->
+     <section class="show-products">
+        <div class="box-container">
+            <?php
+            $select_products = mysqli_query($conn,"SELECT * FROM `products`") or die('query failed');
+            if (!$select_products) {
+                echo "Error: " . mysqli_error($conn);
+            }
+            if (mysqli_num_rows($select_products) > 0) {
+                while ($fetch_products = mysqli_fetch_assoc($select_products)) {
+                    ?>
+                    <div class="box">
+                        <img src="images/<?php echo $fetch_products['image']; ?>" alt="Product Image">
+                        <p>price : $ <?php echo $fetch_products['price'];?></p>
+                        <h4><?php echo $fetch_products['name'];?></h4>
+                        <p class="detail"><?php echo $fetch_products['product_detail'];?></p>
+                        <a href="admin_products.php?edit=<?php echo $fetch_products['product_id']?>" class="edit">edit</a>
+                        <a href="admin_products.php?delete=<?php echo $fetch_products['product_id']?>" class="delete" onclick="return comform('are you sure to delete this product ?')"> delete</a>
+                    </div>
+                    <?php
+                }
+            }?>
+        </div>
+     </section>
+        <!------------------------------------------------------------------------------------------------------------->
 
 
     <script src="./js/script.js"></script>

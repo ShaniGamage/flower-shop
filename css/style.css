@@ -222,7 +222,7 @@ header{
 }
 
 /*-------------add product page ------*/
-.add-product{
+.add-product,.show-products{
     background-image: url('../images/back-image.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -244,6 +244,43 @@ header{
 
 .add-product form textarea{
     height: 200px;
+}
+
+
+.show-products .box-container{
+    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+}
+
+.show-products .box-container .box{
+    background: #fff;
+    
+}
+
+.edit , .delete{
+    margin: .5rem;
+    text-transform: capitalize;
+    color: #fff;
+    background: var(--pink);
+    padding: .5rem 2rem;
+    border-radius: 5px;
+}
+
+.edit:hover , .delete:hover{
+    color: var(--pink);
+    background: transparent;
+    border: 2px solid var(--pink);
+}
+
+.show-products .box .detail{
+    font-size: 14px;
+}
+
+.show-products .box img{
+    width: 80%;
+}
+
+.show-products .box h3{
+    text-transform: capitalize;
 }
 
 /*------media screen-----*/
