@@ -40,13 +40,28 @@ if(isset($_POST['add_product'])){
             }
         }
     }
+}
     /*------------------------------------------------------------------------------------------------ */
 
 
 
     /*-------------------------deleting product from database----------------------------------------- */
+    if(isset($_GET['delete'])){
+        $delete_id = $_GET['delete'];
+        $select_delete_image=mysqli_query($conn,"SELECT image FROM `products` WHERE product_id = $delete_id") or die("query failed");
 
-}
+        $fetch_delete_image = mysqli_fetch_assoc($select_delete_image);
+        unlink('images/'.$fetch_delete_image['image']);
+
+        mysqli_query($conn,"DELETE FROM `products` WHERE product_id='$delete_id'") or die('query failed');
+        mysqli_query($conn,"DELETE FROM `cart` WHERE pid='$delete_id'") or die('query failed');
+        mysqli_query($conn,"DELETE FROM `wishlist` WHERE pid='$delete_id'") or die('query failed');
+        header('location:admin_products.php');
+
+
+    }
+
+
 
 ?>
 
