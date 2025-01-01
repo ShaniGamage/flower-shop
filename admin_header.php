@@ -35,6 +35,13 @@
     </header>
 
     <script src="./js/script.js"></script>
-    
+    <script>
+    const closeBtn = document.querySelector('#close-edit');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+            document.querySelector('.update-container').style.display = 'none';
+        });
+    }
+</script>
 </body>
 </html>

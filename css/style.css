@@ -369,6 +369,9 @@ header{
     padding: .6rem 12%;
 }
 
+.user-container .box-container{
+    padding: 2%;
+}
 
 /*------media screen-----*/
 @media (max-width:991px){
