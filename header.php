@@ -13,10 +13,11 @@
             <a href="admin.php" class="logo">petals</a>
 
             <nav class="navbar">
-                <a href="admin.php">Home</a>
-                <a href="admin_products.php">Products</a>
-                <a href="admin_orders.php">orders</a>
-                <a href="admin_users.php">users</a>
+                <a href="index.php">Home</a>
+                <a href="shop.php">shop</a>
+                <a href="orders.php">orders</a>
+                <a href="about.php">about us</a>
+                <a href="contact.php">contact </a>
             </nav>
 
             <div class="icons">
@@ -25,8 +26,8 @@
             </div>
 
             <div class="user-box">
-                <p>username : <span><?php echo $_SESSION['admin_name']; ?></span></p>
-                <p>email : <span><?php echo $_SESSION['admin_email']; ?></span></p>
+                <p>username : <span><?php echo $_SESSION['user_name']; ?></span></p>
+                <p>email : <span><?php echo $_SESSION['user_email']; ?></span></p>
                 <form method="post" class="logout">
                     <button name="logout" class="logout-btn">LOGOUT</button>
                 </form>

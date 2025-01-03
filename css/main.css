@@ -221,6 +221,244 @@ header{
     margin: 1rem 0;
 }
 
+/*----------------footer page --------------*/
+.home-contact{
+    padding: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url(../images/back-image.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.home-contact h1{
+    text-transform: uppercase;
+    margin: 1rem;
+    color: var(--pink);
+}
+
+.home-contact p{
+    margin-bottom: 2rem;
+}
+
+.btn2{
+    color: var(--pink);
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: 1px solid var(--pink);
+    padding: .5rem 2rem;
+}
+
+.btn2:hover{
+    background:var(--pink);
+    color: #fff;
+}
+
+.footer{
+    background-size: cover;
+    background-position:center ;
+    width: 100%;
+}
+
+.footer .inner-footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(18rem,1fr));
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 10rem;
+    padding-bottom: 2rem;
+}
+
+.footer .inner-footer .card{
+    margin: .5rem;
+}
+
+.footer .inner-footer .card h3{
+    font-weight: normal;
+    text-transform: uppercase;
+    padding-bottom: .5rem;
+    position: relative;
+}
+
+.footer .inner-footer .card h3::before{
+    position: absolute;
+    content: "";
+    width: 60%;
+    height: 2px;
+    background:var(--pink);
+    bottom: 0;
+    left: 0;
+}
+
+.footer .inner-footer .card h3::after{
+    position: absolute;
+    content: "";
+    width: 10%;
+    height: 5px;
+    background: blue;
+    bottom: 0;
+    right: 40%;
+}
+
+.footer .inner-footer .card  li{
+    cursor: pointer;
+    line-height: 1.5;
+    color: gray;
+}
+
+.footer .inner-footer .card li:nth-child(1),
+.footer .inner-footer .card p{
+    margin-top: 1rem;
+}
+
+.footer .inner-footer .card input{
+    width: 80%;
+    box-shadow: none;
+    border: 1px solid gray;
+    border-radius: unset;
+    margin: 0;
+}
+
+.footer .inner-footer .card{
+    color: gray;
+    margin-bottom: 1rem;
+    font-size: 16px;
+}
+
+.footer .inner-footer .card .input-field{
+    display: flex;
+}
+
+.footer .inner-footer .card .input-field i{
+    color: #fff;
+    background: var(--pink);
+    padding: .8rem 1rem;
+    margin-left: .4rem;
+    cursor: pointer;
+}
+
+.footer .inner-footer .card li:hover{
+    color: var(--pink);
+}
+
+.footer .inner-footer .social-links{
+    margin-top: 1rem;
+}
+
+.footer .inner-footer .social-links i{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid var(--pink);
+    color: var(--pink);
+    cursor: pointer;
+    padding: .6rem;
+    margin: .3rem 0;
+    border-radius: 50%;
+}
+
+.footer .inner-footer .social-links i:hover{
+    background:var(--pink);
+    color: #fff;
+}
+
+.bottom-footer{
+    text-transform: capitalize;
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--pink);
+    border: 1px solid gainsboros;
+}
+
+/*-------home section-----*/
+.slide-show-container{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.wrapper-one, .wrapper-two,.wrapper-three{
+    background-color: #eee;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.wrapper-one{
+    background-image: url(../images/orchid.jpg);   
+}
+
+.wrapper-two{
+    background-image: url(../images/orchid.jpg); 
+    animation: slideTwoAnim 20s infinite;  
+}
+
+.wrapper-three{
+    background-image: url(../images/orchid.jpg); 
+    animation: slideThreeAnim 20s infinite; 
+}
+
+.wrapper-text{
+    font:700 40px/1.4 Roboto;
+    position: absolute;
+    top: 50%;
+    left:40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes slideTwoAnim {
+    0%{
+        opacity: 0;
+    }
+    17%{
+        opacity: 0;
+    }
+    33%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    67%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes slideThreeAnim {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    67%{
+        opacity: 1;
+    }
+    83%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
 /*------media screen-----*/
 @media (max-width:991px){
     #menu-btn{
