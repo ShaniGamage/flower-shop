@@ -87,6 +87,23 @@ form .btn:hover{
     margin: 1rem;
 }
 
+.box-container{
+    padding: 2% 8%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(18rem,1fr));
+    justify-content: center;
+    align-items: center;
+}
+
+.box-container .box{
+    box-shadow: var(--box-shadow);
+    padding: 1rem 0;
+    background:var(--white-alpha-25);
+    border: 2px solid var(--white-alpha-40);
+    margin: 1rem;
+    text-align: center;
+    border-radius: 5px;
+}
 
 /* -----Admin header style ------*/
 header{
@@ -192,23 +209,6 @@ header{
     color: #545bba;
 }
 
-.box-container{
-    padding: 2% 8%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(18rem,1fr));
-    justify-content: center;
-    align-items: center;
-}
-
-.box-container .box{
-    box-shadow: var(--box-shadow);
-    padding: 1rem 0;
-    background:var(--white-alpha-25);
-    border: 2px solid var(--white-alpha-40);
-    margin: 1rem;
-    text-align: center;
-    border-radius: 5px;
-}
 
 .box-container .box h3{
     font-size: 3rem;
@@ -376,88 +376,277 @@ header{
     border: 1px solid gainsboros;
 }
 
+
 /*-------home section-----*/
-.slide-show-container{
-    height: 100%;
+.slide-show-container {
+    height: 100vh; 
     width: 100%;
     position: relative;
+    overflow: hidden;
 }
 
-.wrapper-one, .wrapper-two,.wrapper-three{
-    background-color: #eee;
+.wrapper-one, .wrapper-two, .wrapper-three {
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
     position: absolute;
+    opacity: 0; 
+    transition: opacity 1s ease-in-out; 
+}
+
+.wrapper-one {
+    background-image: url('../images/back-image.jpg');
+    animation: slideOneAnim 15s infinite;
+}
+
+.wrapper-two {
+    background-image: url('../images/orchid.jpg');
+    animation: slideTwoAnim 15s infinite;
+}
+
+.wrapper-three {
+    background-image: url('../images/test.jpg');
+    animation: slideThreeAnim 15s infinite;
+}
+
+.wrapper-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
     color: #fff;
+    text-align: center;
     text-transform: capitalize;
 }
 
-.wrapper-one{
-    background-image: url(../images/orchid.jpg);   
-}
 
-.wrapper-two{
-    background-image: url(../images/orchid.jpg); 
-    animation: slideTwoAnim 20s infinite;  
-}
-
-.wrapper-three{
-    background-image: url(../images/orchid.jpg); 
-    animation: slideThreeAnim 20s infinite; 
-}
-
-.wrapper-text{
-    font:700 40px/1.4 Roboto;
-    position: absolute;
-    top: 50%;
-    left:40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@keyframes slideOneAnim {
+    0%, 33% {
+        opacity: 1;
+        z-index: 3;
+    }
+    34%, 100% {
+        opacity: 0;
+    }
 }
 
 @keyframes slideTwoAnim {
-    0%{
+    0%, 33% {
         opacity: 0;
     }
-    17%{
-        opacity: 0;
-    }
-    33%{
+    34%, 66% {
         opacity: 1;
+        z-index: 3;
     }
-    50%{
-        opacity: 1;
-    }
-    67%{
-        opacity: 0;
-    }
-    100%{
+    67%, 100% {
         opacity: 0;
     }
 }
 
 @keyframes slideThreeAnim {
-    0%{
+    0%, 66% {
         opacity: 0;
     }
-    50%{
-        opacity: 0;
-    }
-    67%{
+    67%, 100% {
         opacity: 1;
-    }
-    83%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
+        z-index: 3;
     }
 }
 
+
+.row{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+}
+
+.row .card{
+    background:url(../images/back-image.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 400px;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.row .card .detail{
+    position: absolute;
+    bottom: 30%;
+    left: 10%;
+}
+
+.row .card h1{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.row .card a{
+    color: var(--pink);
+    font-size: 16px;
+    padding: .5rem 1.5rem;
+    border:  1px solid var(--pink);
+    text-transform: uppercase;
+}
+
+.row .card a:hover{
+    background: var(--pink);
+    color: #fff;
+}
+
+.row .card:nth-child(1){
+    background:url(../images/orchid.jpg);
+}
+
+.row .card:nth-child(2){
+    background:url(../images/test.jpg);
+}
+
+.row .card:nth-child(3){
+    background:url(../images/back-image.jpg);
+}
+
+
+/*-----categoris section--------*/
+.categories{
+    padding-bottom: 3%;
+}
+
+.categories .box-container{
+    grid-template-columns: repeat(auto-fit,minmax(15rem,1fr));
+}
+
+.categories .box-container .box{
+    font-size: 1.5rem;
+    color: gray;
+    background-color: transparent;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.categories .box-container .box:hover{
+    color: var(--pink);
+}
+
+.categories .box-container .box span{
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.categories .box-container .box img{
+    width: 200px;
+    height: 200px;
+    padding: 2px;
+    margin: 1rem 0 ;
+    border-radius: 50%;
+    border: 2px solid #ececec;
+}
+
+/*-------banner3 styles -------*/
+.banner3{
+    background-image: url(../images/orchid.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    max-width: 1400px;
+    margin: 3rem auto;
+    padding-left: 5%;
+    height: 300px;
+    color: #fff;
+}
+
+.banner3 .detail{
+    padding: 4% 7%;
+}
+
+.banner3 .detail h1{
+    font-size: 2.5rem;
+    margin: .5rem 0;
+}
+
+.banner3 .detail p{
+    margin-bottom: 1.5rem;
+}
+
+.banner3 .detail a{
+    text-transform: uppercase;
+    color: #fff ;
+    padding: .5rem 2rem;
+    border: 1px solid #fff;
+}
+
+.shop .box{
+    position: relative;
+}
+
+.price{
+    font-size: 18px;
+}
+
+.name{
+    font-style: 20px ;
+    color: var(--pink);
+    margin: .5rem;
+    text-transform: capitalize;
+}
+
+.shop .icon{
+    position: absolute;
+    right: 3%;
+    top:30% ;
+    display: flex;
+    flex-direction: column;
+    background: var(--white-alpha-40);
+    visibility: hidden;
+}
+
+.shop .box:hover .icon{
+    visibility: visible;
+}
+
+.shop .icon a,
+.shop .icon button{
+    margin: .2rem 0;
+    padding: .3rem;
+    border: 1px solid#cecece;
+    color: gray;
+}
+
+.shop img{
+    width: 100%;
+}
+
+.shop .more{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    margin: .5rem auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: gray;
+    border: 1px solid gray;
+}
+
+.shop .more a{
+    margin-bottom: .6rem;
+    color: gray;
+    text-transform: capitalize;
+}
+
+.shop .more a:hover{
+    color: var(--pink);
+}
+
+.shop .more:hover{
+    border: 1px solid var(--pink);
+    color: var(--pink);
+}
 
 /*------media screen-----*/
 @media (max-width:991px){

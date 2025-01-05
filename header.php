@@ -22,6 +22,18 @@
 
             <div class="icons">
                 <i class="bi bi-list-ul" id="menu-btn"></i>
+                <?php 
+                $select_wishlist=mysqli_query($conn,"SELECT *FROM `wishlist` WHERE user_id='$user_id'") or die('query failed');
+                $wishlist_num_rows= mysqli_num_rows($select_wishlist);
+                ?>
+                <a href="wishlist.php"><i class="bi bi-heart"></i><span>(<?php echo $wishlist_num_rows;?>)</span></a>
+                
+                <?php 
+                $select_cart=mysqli_query($conn,"SELECT *FROM `cart` WHERE user_id='$user_id'") or die('query failed');
+                $cart_num_rows= mysqli_num_rows($select_cart);
+                ?>
+                <a href="cart.php"><i class="bi bi-cart"></i><span>(<?php echo $cart_num_rows;?>)</span></a>
+                
                 <i class="bi bi-person" id="user-btn"></i>
             </div>
 
