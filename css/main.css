@@ -648,6 +648,74 @@ header{
     color: var(--pink);
 }
 
+.banner{
+    background-image: url(../images/orchid.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    color: #fff;
+}
+
+.banner h1{
+    font-size: 3rem;
+    position: relative;
+    text-transform: capitalize;
+}
+
+.banner p{
+    font-size: 18px;  
+}
+
+.view_page{
+    padding: 5% 8%;
+}
+
+.view_page form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.view_page form img{
+    width: 50%;
+}
+
+.view_page form .name{
+    font-size: 3rem;
+    color: var(--pink);
+}
+
+.view_page form .detail,
+.view_page form .price{
+    font-stretch: 18px;
+    color: gray;
+    line-height: 2;
+}
+
+.view_page form .price{
+    font-size: 24px;
+}
+
+.view_page form .quantity{
+    width: 60%;
+    box-shadow: none;
+    border: 1px solid var(--pink);
+    border-radius: 0;
+    margin-top: 1rem;
+}
+
+.view_page button{
+    background:var(--pink);
+    color: #fff;
+    margin-top: 1rem;
+    padding: .8rem 1rem;
+}
+
+ 
+
 /*------media screen-----*/
 @media (max-width:991px){
     #menu-btn{

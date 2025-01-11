@@ -60,79 +60,10 @@ if(isset($_POST['add_to_cart'])){
 </head>
 <body>
     <?php include 'header.php' ?>
-    <div class="slider-section">
-        <div class="slide-show-container">
-            <div class="wrapper-one">
-                <div class="wrapper-text">inspired by nature</div>
-            </div>
-            <div class="wrapper-two">
-                <div class="wrapper-text">fresh flowers for you</div>
-            </div>
-            <div class="wrapper-three">
-                <div class="wrapper-text">inspired by nature</div>
-            </div>
-        </div>
+    <div class="banner">
+        <h1>our shop</h1>
+        <p>Lorem ipsum dolor sit amet consectuer adipising elit.</p>
     </div>
-    
-    <div class="row">
-        <div class="card">
-            <div class="detail">
-                <span>30% OFF TODAY</span>
-                <h1>simple & elegent</h1>
-                <a href="shop.php">shop now</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="detail">
-                <span>30% OFF TODAY</span>
-                <h1>simple & elegent</h1>
-                <a href="shop.php">shop now</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="detail">
-                <span>30% OFF TODAY</span>
-                <h1>simple & elegent</h1>
-                <a href="shop.php">shop now</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="categories">
-        <h1 class="title">TOP CATEGORIES</h1>
-        <div class="box-container">
-            <div class="box">
-                <img src="./images/orchid.jpg">
-                <span>birthday</span>
-            </div>
-            <div class="box">
-                <img src="./images/orchid.jpg">
-                <span>next day</span>
-            </div>
-            <div class="box">
-                <img src="./images/orchid.jpg">
-                <span>plant</span>
-            </div>
-            <div class="box">
-                <img src="./images/orchid.jpg">
-                <span>wedding</span>
-            </div>
-            <div class="box">
-                <img src="./images/orchid.jpg">
-                <span>sympathy</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="banner3">
-        <div class="detail">
-            <span>BETTER THAN CAKE</span>
-            <h1>BIRTHDAY BOUQS</h1>
-            <p>Believe in birthday magic? (You will.) Celebrate with party-ready blooms!<p>
-            <a href="shop.php">explore <i class=" bi bi-arrow-right"></i></a>
-        </div>
-    </div>
-
     <div class="shop">
         <h1 class="title">shop best sellers</h1>
         <?php
@@ -176,10 +107,7 @@ if(isset($_POST['add_to_cart'])){
         ?>
         
     </div>
-    <div class="more">
-        <a href="shop.php">load more</a>
-        <i class="bi bi-arrow-down"></i>
-    </div>
+    
     </div>
 
     <?php include 'footer.php' ?>
