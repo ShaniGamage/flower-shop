@@ -13,8 +13,6 @@ if(isset($_POST['add_to_wishlist'])){
     $product_name=$_POST['product_name'];
     $product_price=$_POST['product_price'];
     $product_image=$_POST['product_image'];
-    
-
 
     $wishlist_number=mysqli_query($conn,"SELECT * FROM `wishlist` WHERE name='$product_name' AND user_id='$user_id' ") or die('query failed');
     $cart_number = mysqli_query($conn,"SELECT * FROM `cart` WHERE name='$product_name' AND user_id='$user_id' ") or die('query failed');
@@ -35,13 +33,12 @@ if(isset($_POST['add_to_cart'])){
     $product_name=$_POST['product_name'];
     $product_price=$_POST['product_price'];
     $product_image=$_POST['product_image'];
-    $product_quantity=$_POST['product_quantity'];
 
     $cart_number = mysqli_query($conn,"SELECT * FROM `cart` WHERE name='$product_name' AND user_id='$user_id' ") or die('query failed');
     if(mysqli_num_rows($cart_number)){
         $message[]='product already exists in cart';
     }else{
-        mysqli_query($conn,"INSERT INTO `cart` (`user_id`,`pid`,`name`,`quantity`,`price`,`image`) VALUES ('$user_id','$product_id','$product_name','$product_price','$product_quantity','$product_image')");
+        mysqli_query($conn,"INSERT INTO `cart` (`user_id`,`pid`,`name`,`price`,`image`) VALUES ('$user_id','$product_id','$product_name','$product_price','$product_image')");
         $message[]='product successfully added to the cart';
     }
 }
@@ -64,10 +61,12 @@ if(isset($_POST['add_to_cart'])){
 <body>
     <?php include 'header.php' ?>
     <div class="banner">
-        <h1>product detail</h1>
+        <h1>my wishlist</h1>
         <p>Lorem ipsum dolor sit amet consectuer adipising elit.</p>
     </div>
-    <?php
+    <div class="shop">
+        <h1 class="title">products added in wishlist</h1>
+        <?php
         if(isset($message)){
             foreach($message as $message){
                 echo "
@@ -78,42 +77,39 @@ if(isset($_POST['add_to_cart'])){
             }
         }
     ?>
-        
-    <div class="view_page">
+    <div class="box-container">
         <?php
-        if(isset($_GET['pid'])){
-            $pid=$_GET['pid'];
-            $select_products = mysqli_query($conn,"SELECT * FROM `products` WHERE product_id='$pid'") or die('query failed');
-            if(mysqli_num_rows($select_products)>0){
-                while($fetch_products = mysqli_fetch_assoc($select_products)){
+        $grand_total=0;
+        $select_wishlist = mysqli_query($conn,"SELECT * FROM `wishlist` WHERE user_id='$user_id'") or die('query failed');
+        if(mysqli_num_rows($select_wishlist)>0){
+            while($fetch_wishlist= mysqli_fetch_assoc($select_wishlist)){
 
         ?>
         <form method="post" action="" class="box">
-            <img src="images/<?php echo $fetch_products['image']?>">
-            <div class="detail">
-                <div class="price">$<?php echo $fetch_products['price']?>/=</div>
-                <div class="name"><?php echo $fetch_products['name']?></div>
-                <div class="detail"><?php echo $fetch_products['product_detail']?></div>
-                <input type="hidden" name="product_id" value="<?php echo $fetch_products['product_id']?>">
-                <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']?>">
-                <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']?>">
-                <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']?>">
-
-                <div class="icon">
-                    <button type="submit" name="add_to_wishlist" class="bi bi-heart"></button>
-                    <input type="number" name="product_quantity" value="1" min="0" class="quantity">
-                    <button type="submit" name="add_to_cart" class="bi bi-cart"></button>
-                </div>
+            <div class="icon">
+                <a href="wishlist.php?delete=<?php echo $fetch_wishlist['id']?>" class="bi bi-x"></a>
+                <a href="view_page.php?pid=<?php echo $fetch_products['product_id']?>" class="bi bi-eye-fill"></a>
             </div>
+            <img src="images/<?php echo $fetch_wishlist['image']?>">
+            <div class="price">$<?php echo $fetch_wishlist['price']?>/=</div>
+            <div class="name"><?php echo $fetch_wishlist['name']?></div>
+           <!--<input type="hidden" name="product_id" value="<?php echo $fetch_wishlist['id']?>">
+            <input type="hidden" name="product_name" value="<?php echo $fetch_wishlist['name']?>">
+            <input type="hidden" name="product_price" value="<?php echo $fetch_wishlist['price']?>">
+            <input type="hidden" name="product_image" value="<?php echo $fetch_wishlist['image']?>"-->
+            <button type="submit" name="add_to_cart" class="btn2">add to cart<i class="bi bi-cart"></i></button>
         </form>
         <?php
-                }
             }
+        }else{
+            echo "<p class='empty'>no products added yet!</p>";
         }
-           
         ?>
         
     </div>
+    
+    </div>
+
     <?php include 'footer.php' ?>
 </body>
 </html>
