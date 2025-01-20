@@ -648,7 +648,7 @@ header{
     color: var(--pink);
 }
 
-.banner{
+.banner,.banner-2{
     background-image: url(../images/orchid.jpg);
     display: flex;
     flex-direction: column;
@@ -714,7 +714,188 @@ header{
     padding: .8rem 1rem;
 }
 
- 
+/*--------wishlist --------*/
+:disabled{
+    position: relative;
+    opacity: .5;
+}
+
+.wishlist_total{
+    max-width: 1200px;
+    box-shadow: var(--box-shadow);
+    margin: 2rem auto;
+    border: 1px solid gainsboro;
+    text-align: center;
+    padding: 3rem 0;
+    line-height: 2;
+    text-transform: capitalize;
+}
+
+.wishlist_total p{
+    font-size: 1.5rem;
+}
+
+.wishlist_total a{
+    text-transform: capitalize;
+    font-size: 16px;
+    margin-right: 2rem;
+}
+
+.qty{
+    display: flex;
+    justify-content: space-between;
+}
+
+.qty input[type='number']{
+    width: 35%;
+}
+
+.qty input[type='submit']{
+    width: 55%;
+    cursor: pointer;
+    background: var(--pink);
+    box-shadow: none;
+    color: #fff;
+}
+
+/*----------about us----------*/
+.about{
+    padding: 4%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.about .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about .row .detail{
+    width: 50%;
+    margin: 1rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.about .row .detail p{
+    margin-bottom: 1rem;
+}
+
+.about .row .img-box img{
+    width: 50%;
+}
+
+.about .row .detail h1{
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--pink);
+}
+
+.banner-2{
+    background-image: url(../images/test.jpg);
+}
+
+.banner-2 h1{
+    padding-bottom: 1.5rem;
+}
+
+.banner-2 .btn2{
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.services,.stylist{
+    background: url('../images/back-image.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    padding: 8% 0;
+}
+
+.services .box-container,
+.stylist .box-container{
+    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+}
+
+.services .box-container .box{
+    line-height: 2;
+    padding: 2rem 1rem;
+}
+
+.services .box-container .box h3{
+    margin-top: 2rem;
+    color: gray;
+    font-size: 1.5rem;
+}
+
+.services .box-container .box i{
+    font-size: 0.5rem;
+    position: relative;
+    border-radius: 50%;
+    color: #fff;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    background: var(--pink);
+    text-align: center;
+}
+
+.stylist{
+    background: url('../images/orchid.jpg');
+    padding: 4% 0;
+}
+
+.stylist h3{
+    color: var(--pink);
+    text-transform: uppercase;
+    margin: .5rem 0;
+}
+
+.stylist p{
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.stylist .img-box{
+    position: relative;
+}
+
+.stylist .img-box img{
+    width: 100%;
+}
+.stylist .social-links{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,0.6);
+    visibility: hidden;
+    transition: .3s;
+}
+
+.stylist .img-box:hover .social-links{
+    visibility: visible;
+}
+
+.stylist .social-links i{
+    margin:.3rem ;
+    background: #fff;
+    padding: .8rem;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.stylist .social-links i:hover{
+    background: var(--pink);
+    color: #fff;
+}
+
 
 /*------media screen-----*/
 @media (max-width:991px){

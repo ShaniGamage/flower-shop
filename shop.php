@@ -13,6 +13,7 @@ if(isset($_POST['add_to_wishlist'])){
     $product_name=$_POST['product_name'];
     $product_price=$_POST['product_price'];
     $product_image=$_POST['product_image'];
+    $product_quantity=$_POST['product_quantity'];
 
     $wishlist_number=mysqli_query($conn,"SELECT * FROM `wishlist` WHERE name='$product_name' AND user_id='$user_id' ") or die('query failed');
     $cart_number = mysqli_query($conn,"SELECT * FROM `cart` WHERE name='$product_name' AND user_id='$user_id' ") or die('query failed');
@@ -21,7 +22,7 @@ if(isset($_POST['add_to_wishlist'])){
     }else if(mysqli_num_rows($cart_number)){
         $message[]='product already exists in cart';
     }else{
-        mysqli_query($conn,"INSERT INTO `wishlist` (`user_id`,`pid`,`name`,`price`,`image`) VALUES ('$user_id','$product_id','$product_name','$product_price','$product_image')");
+        mysqli_query($conn,"INSERT INTO `wishlist` (`user_id`,`pid`,`name`,`price`,`quantity`,`image`) VALUES ('$user_id','$product_id','$product_name','$product_price','$product_quantity','$product_image')");
         $message[]='product successfully added to the wishlist';
     }
 }
@@ -91,6 +92,7 @@ if(isset($_POST['add_to_cart'])){
             <input type="hidden" name="product_id" value="<?php echo $fetch_products['product_id']?>">
             <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']?>">
             <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']?>">
+            <input type="hidden" name="product_quantity" value="1" min=0>
             <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']?>">
 
             <div class="icon">

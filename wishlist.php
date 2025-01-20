@@ -8,24 +8,6 @@ if(!isset($user_id)){
 }
 
 /*----------------adding products to wishlist------------- */
-if(isset($_POST['add_to_wishlist'])){
-    $product_id=$_POST['product_id'];
-    $product_name=$_POST['product_name'];
-    $product_price=$_POST['product_price'];
-    $product_image=$_POST['product_image'];
-
-    $wishlist_number=mysqli_query($conn,"SELECT * FROM `wishlist` WHERE name='$product_name' AND user_id='$user_id' ") or die('query failed');
-    $cart_number = mysqli_query($conn,"SELECT * FROM `cart` WHERE name='$product_name' AND user_id='$user_id' ") or die('query failed');
-    if(mysqli_num_rows($wishlist_number)>0){
-        $message[]='product already exists in wishlist';
-    }else if(mysqli_num_rows($cart_number)){
-        $message[]='product already exists in cart';
-    }else{
-        mysqli_query($conn,"INSERT INTO `wishlist` (`user_id`,`pid`,`name`,`price`,`image`) VALUES ('$user_id','$product_id','$product_name','$product_price','$product_image')");
-        $message[]='product successfully added to the wishlist';
-    }
-}
-
 
 /*----------------adding products to cart------------- */
 if(isset($_POST['add_to_cart'])){
@@ -33,14 +15,29 @@ if(isset($_POST['add_to_cart'])){
     $product_name=$_POST['product_name'];
     $product_price=$_POST['product_price'];
     $product_image=$_POST['product_image'];
+    $product_quantity = 1;
 
     $cart_number = mysqli_query($conn,"SELECT * FROM `cart` WHERE name='$product_name' AND user_id='$user_id' ") or die('query failed');
     if(mysqli_num_rows($cart_number)){
         $message[]='product already exists in cart';
     }else{
-        mysqli_query($conn,"INSERT INTO `cart` (`user_id`,`pid`,`name`,`price`,`image`) VALUES ('$user_id','$product_id','$product_name','$product_price','$product_image')");
+        mysqli_query($conn,"INSERT INTO `cart` (`user_id`,`pid`,`name`,`price`,`quantity`,`image`) VALUES ('$user_id','$product_id','$product_name','$product_price','$product_image')");
         $message[]='product successfully added to the cart';
     }
+}
+
+/*-------------------deleting products from wishlist --------------- */
+if(isset($_GET['delete'])){
+    $delete_id=$_GET['delete'];
+
+    mysqli_query($conn,"DELETE FROM `wishlist` WHERE id='$delete_id'") or die('query failed');
+    header('location:wishlist.php');
+}
+
+/*-------------------deleting products from wishlist --------------- */
+if(isset($_GET['delete_all'])){
+    mysqli_query($conn,"DELETE FROM `wishlist` WHERE user_id='$user_id'") or die('query failed');
+    header('location:wishlist.php');
 }
 
 ?>
@@ -100,12 +97,19 @@ if(isset($_POST['add_to_cart'])){
             <button type="submit" name="add_to_cart" class="btn2">add to cart<i class="bi bi-cart"></i></button>
         </form>
         <?php
+        $grand_total+=$fetch_wishlist['price'];
             }
         }else{
-            echo "<p class='empty'>no products added yet!</p>";
+            echo "no products in your wishlist";
         }
         ?>
         
+    </div>
+
+    <div class="wishlist_total">
+        <p>total amount payable : <span>$<?php echo $grand_total?>/=</span></p>
+        <a href="shop.php"> continue shopping</a>
+        <a href="wishlist.php?delete_all" class="btn2 <?php echo($grand_total > 1)?'':'disabled'?>" onclick="return confirm('do you want ot delete all from wishlist ?')">delete all</a>
     </div>
     
     </div>
