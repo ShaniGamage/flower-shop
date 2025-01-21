@@ -805,7 +805,7 @@ header{
     color: #fff;
 }
 
-.services,.stylist{
+.services,.stylist,.testimonial-container{
     background: url('../images/back-image.jpg');
     background-size: cover;
     width: 100%;
@@ -843,6 +843,7 @@ header{
 .stylist{
     background: url('../images/orchid.jpg');
     padding: 4% 0;
+    height: auto;
 }
 
 .stylist h3{
@@ -896,6 +897,124 @@ header{
     color: #fff;
 }
 
+.testimonial-container{
+    padding: 6% 0;
+}
+
+.container{
+    position: relative;
+    perspective: 1000px;
+    padding-top: 2rem;
+}
+
+.container .testimonial-item{
+    background: var(--white-alpha-25);
+    border: 2px solid var(--white-alpha-40);
+    backdrop-filter: var(--backdrope-filter-blur);
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    color: gray;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem;
+    transition: .4s;
+    display: none;
+    width: 50vw;
+}
+
+.container .testimonial-item h3{
+    color: var(--pink);
+    font-size: 1.3rem;
+    padding-bottom: .5rem;
+    text-transform: capitalize;
+    
+}
+
+.container .testimonial-item.active{
+    display: block;
+}
+
+.container .testimonial-item img{
+    padding: 1rem 0;
+    border-radius: 50%;
+}
+
+.container .left-arrow,
+.container .right-arrow{
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    width: 40px ;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--pink);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.right-arrow{
+    right: 3rem;
+}
+
+.left-arrow{
+    margin: 3rem;
+}
+
+/*------------contact section---------*/
+.help{
+    padding: 5% 0;
+}
+
+.box-container .box h2{
+    font-size: 1.2rem;
+    color: var(--pink);
+    text-transform: uppercase;
+    margin: .5rem 0;
+}
+
+.box-container .box p{
+    font-size: 18px;
+    color: gray;
+    margin: 1rem 0;
+}
+
+.form-container{
+    background-image: url("../images/orchid.jpg");
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.form-container .form-section{
+    max-width: 1200px;
+    margin:  0 auto;
+    padding-top: 6%;
+    padding-bottom: 5%;
+}
+
+.form-container .form-section form{
+    width: 50vw;
+    background: var(--white-alpha-25);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: var(--backdrope-filter-blur);
+}
+
+.form-container .form-section form h1{
+    text-align: center;
+    color: var(--pink);
+    margin: 1rem 0;
+}
+
+.form-container .form-section form p{
+    text-align: center;
+    color: gray;
+}
 
 /*------media screen-----*/
 @media (max-width:991px){

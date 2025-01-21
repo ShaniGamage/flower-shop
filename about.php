@@ -112,6 +112,47 @@ if(!isset($user_id)){
             </div>
         </div>
     </div>
+    <div class="testimonial-container">
+        <h1 class="title">what people say</h1>
+        <div class="container">
+            <div class="testimonial-item active">
+                <img src="images/orchid.jpg" width="100" height="100">
+                <h3>sara smith</h3>
+                <p>um sara from califonia bla bla blaaaaaaaa</p>
+            </div>
+            <div class="testimonial-item">
+                <img src="images/orchid.jpg" width="100" height="100">
+                <h3> smith</h3>
+                <p>um sara from califonia bla bla blaaaaaaaa</p>
+            </div>
+            <div class="testimonial-item">
+                <img src="images/orchid.jpg" width="100" height="100">
+                <h3>sara </h3>
+                <p>um sara from califonia bla bla blaaaaaaaa</p>
+            </div>
+            <div class="left-arrow" onclick="nextSlide()"><i class="bi bi-arrow-left"></i></div>
+            <div class="right-arrow" onclick="prevSlide()"><i class="bi bi-arrow-right"></i></div>
+        </div>
+    </div>
+
+
     <?php include 'footer.php' ?>
+    <script >
+        /*----------testimonial------------------------------------ */
+let slides=document.querySelectorAll('.testimonial-item');
+let index = 0;
+function nextSlide(){
+    slides[index].classList.remove('active')
+    index=(index+1)%slides.length
+    slides[index].classList.add('active')
+}
+
+function prevSlide(){
+    slides[index].classList.remove('active')
+    index=(index-1+slides.length)%slides.length
+    slides[index].classList.add('active')
+}
+
+    </script>
 </body>
 </html>
