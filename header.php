@@ -15,7 +15,7 @@
             <nav class="navbar">
                 <a href="index.php">Home</a>
                 <a href="shop.php">shop</a>
-                <a href="orders.php">orders</a>
+                <a href="order.php">orders</a>
                 <a href="about.php">about us</a>
                 <a href="contact.php">contact </a>
             </nav>

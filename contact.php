@@ -88,7 +88,7 @@ if(isset($_POST['submit-btn'])){
                     <input type="text" name="name">
                 </div>
                 <div class="input-field">
-                    <label>your nemail</label>
+                    <label>your email</label>
                     <input type="text" name="email">
                 </div>
                 <div class="input-field">
