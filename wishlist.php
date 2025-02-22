@@ -21,7 +21,7 @@ if(isset($_POST['add_to_cart'])){
     if(mysqli_num_rows($cart_number)){
         $message[]='product already exists in cart';
     }else{
-        mysqli_query($conn,"INSERT INTO `cart` (`user_id`,`pid`,`name`,`price`,`quantity`,`image`) VALUES ('$user_id','$product_id','$product_name','$product_price','$product_image')");
+        mysqli_query($conn,"INSERT INTO `cart` (`user_id`,`pid`,`name`,`price`,`quantity`,`image`) VALUES ('$user_id','$product_id','$product_name','$product_price','$product_quantity','$product_image')");
         $message[]='product successfully added to the cart';
     }
 }
@@ -59,7 +59,7 @@ if(isset($_GET['delete_all'])){
     <?php include 'header.php' ?>
     <div class="banner">
         <h1>my wishlist</h1>
-        <p>Lorem ipsum dolor sit amet consectuer adipising elit.</p>
+        <p>Bringing You the Freshest Blooms, Where Every Bloom Tells a Story!</p>
     </div>
     <div class="shop">
         <h1 class="title">products added in wishlist</h1>
@@ -85,15 +85,15 @@ if(isset($_GET['delete_all'])){
         <form method="post" action="" class="box">
             <div class="icon">
                 <a href="wishlist.php?delete=<?php echo $fetch_wishlist['id']?>" class="bi bi-x"></a>
-                <a href="view_page.php?pid=<?php echo $fetch_products['product_id']?>" class="bi bi-eye-fill"></a>
+                <a href="view_page.php?pid=<?php echo $fetch_wishlist['pid']?>" class="bi bi-eye-fill"></a>
             </div>
             <img src="images/<?php echo $fetch_wishlist['image']?>">
             <div class="price">$<?php echo $fetch_wishlist['price']?>/=</div>
             <div class="name"><?php echo $fetch_wishlist['name']?></div>
-           <!--<input type="hidden" name="product_id" value="<?php echo $fetch_wishlist['id']?>">
+           <input type="hidden" name="product_id" value="<?php echo $fetch_wishlist['pid']?>">
             <input type="hidden" name="product_name" value="<?php echo $fetch_wishlist['name']?>">
             <input type="hidden" name="product_price" value="<?php echo $fetch_wishlist['price']?>">
-            <input type="hidden" name="product_image" value="<?php echo $fetch_wishlist['image']?>"-->
+            <input type="hidden" name="product_image" value="<?php echo $fetch_wishlist['image']?>">
             <button type="submit" name="add_to_cart" class="btn2">add to cart<i class="bi bi-cart"></i></button>
         </form>
         <?php

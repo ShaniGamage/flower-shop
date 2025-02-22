@@ -64,13 +64,25 @@ if(isset($_POST['add_to_cart'])){
     <div class="slider-section">
         <div class="slide-show-container">
             <div class="wrapper-one">
-                <div class="wrapper-text">inspired by nature</div>
+                <div class="wrapper-text">inspired by nature
+                <p style="font-size: 15px;">"Petals – Bringing You the Freshest Blooms, Handpicked with Love!"</p>
+                </div>
+                
             </div>
             <div class="wrapper-two">
-                <div class="wrapper-text">fresh flowers for you</div>
+                <div class="wrapper-text">Fresh, Fragrant, and Full of Love 
+                <p style="font-size: 15px;">"Petals – Bringing You the Freshest Blooms, Handpicked with Love!"</p>
+                </div>
             </div>
             <div class="wrapper-three">
-                <div class="wrapper-text">inspired by nature</div>
+                <div class="wrapper-text">Blooming Beauty, Delivered Fresh!
+                <p style="font-size: 15px;">"Petals – Bringing You the Freshest Blooms, Handpicked with Love!"</p>
+                </div>
+            </div>
+            <div class="wrapper-four">
+                <div class="wrapper-text">Say It with Flowers
+                <p style="font-size: 15px;">"Petals – Bringing You the Freshest Blooms, Handpicked with Love!"</p>
+                </div>
             </div>
         </div>
     </div>
@@ -85,15 +97,15 @@ if(isset($_POST['add_to_cart'])){
         </div>
         <div class="card">
             <div class="detail">
-                <span>30% OFF TODAY</span>
-                <h1>simple & elegent</h1>
+                <span>Free delivery above RS.4000</span>
+                <h1>Pick you fragrance</h1>
                 <a href="shop.php">shop now</a>
             </div>
         </div>
         <div class="card">
             <div class="detail">
-                <span>30% OFF TODAY</span>
-                <h1>simple & elegent</h1>
+                <span>upto 40% off </span>
+                <h1>enjoy lovely month feb</h1>
                 <a href="shop.php">shop now</a>
             </div>
         </div>
@@ -103,23 +115,27 @@ if(isset($_POST['add_to_cart'])){
         <h1 class="title">TOP CATEGORIES</h1>
         <div class="box-container">
             <div class="box">
-                <img src="./images/orchid.jpg">
+                <img src="./images/birthday.jpg">
                 <span>birthday</span>
             </div>
             <div class="box">
-                <img src="./images/orchid.jpg">
-                <span>next day</span>
+                <img src="./images/f3.jpg">
+                <span>Graduation</span>
             </div>
             <div class="box">
-                <img src="./images/orchid.jpg">
+                <img src="./images/rose1.webp">
+                <span>Annivesary</span>
+            </div>
+            <div class="box">
+                <img src="./images/plant.webp">
                 <span>plant</span>
             </div>
             <div class="box">
-                <img src="./images/orchid.jpg">
+                <img src="./images/wedding.jpg">
                 <span>wedding</span>
             </div>
             <div class="box">
-                <img src="./images/orchid.jpg">
+                <img src="./images/sympathy.jpg">
                 <span>sympathy</span>
             </div>
         </div>
@@ -156,7 +172,7 @@ if(isset($_POST['add_to_cart'])){
         ?>
         <form method="post" action="" class="box">
             <img src="images/<?php echo $fetch_products['image']?>">
-            <div class="price">$<?php echo $fetch_products['price']?>/=</div>
+            <div class="price">Rs.<?php echo $fetch_products['price']?>/=</div>
             <div class="name"><?php echo $fetch_products['name']?></div>
             <input type="hidden" name="product_id" value="<?php echo $fetch_products['product_id']?>">
             <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']?>">

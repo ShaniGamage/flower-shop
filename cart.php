@@ -22,7 +22,7 @@ if(isset($_POST['update_quantity_btn'])){
 /*----------------adding products to cart------------- */
 
 
-/*-------------------deleting products from wishlist --------------- */
+/*-------------------deleting products from cart --------------- */
 if(isset($_GET['delete'])){
     $delete_id=$_GET['delete'];
 
@@ -30,7 +30,7 @@ if(isset($_GET['delete'])){
     header('location:cart.php');
 }
 
-/*-------------------deleting products from wishlist --------------- */
+/*-------------------deleting products from cart --------------- */
 if(isset($_GET['delete_all'])){
     mysqli_query($conn,"DELETE FROM `cart` WHERE user_id='$user_id'") or die('query failed');
     header('location:cart.php');
@@ -55,7 +55,7 @@ if(isset($_GET['delete_all'])){
     <?php include 'header.php' ?>
     <div class="banner">
         <h1>my cart</h1>
-        <p>Lorem ipsum dolor sit amet consectuer adipising elit.</p>
+        <p>Bringing You the Freshest Blooms, Where Every Bloom Tells a Story!</p>
     </div>
     <div class="shop">
         <h1 class="title">products added in cart</h1>
@@ -87,14 +87,16 @@ if(isset($_GET['delete_all'])){
             <div class="price">$<?php echo $fetch_cart['price']?>/=</div>
             <div class="name"><?php echo $fetch_cart['name']?></div>
             <form method="post">
-                <input type="hidden" name="update_quantity" value="<?php echo $fetch_cart['id']?>">
+                <input type="hidden" name="update_quantity_id" value="<?php echo $fetch_cart['id']?>">
                 <div class="qty">
                     <input type="number" name="update_quantity" min="1" value="<?php echo $fetch_cart['quantity']?>">
                     <input type="submit" name="update_quantity_btn" value="update">
                 </div>
+                <a href="cart.php?delete=<?php echo $fetch_cart['id']; ?>" class="btn2" onclick="return confirm('Do you want to delete this item from the cart?')">Delete</a>
+
             </form>
             <div class="total-amt">
-                Total Amount : <span><?php echo $total_amt=($fetch_cart['price']*$fetch_cart['quantity']) ?></span>
+                Total Amount : <span><?php echo $total_amt = ((float)$fetch_cart['price'] * (int)$fetch_cart['quantity']); ?></span>
             </div>
         </div>
         <?php

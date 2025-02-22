@@ -27,7 +27,7 @@ if(isset($_POST['logout'])){
 </head>
 <body>
     <?php include 'admin_header.php'?>
-    <section class="dashboard">
+    <section class="dashboard" style="background: url(./images/admin.jpg); background-size:cover;height:100vh">
         <h1 class="title">dashboard</h1>
         <div class="box-container">
             <div class="box">

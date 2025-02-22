@@ -38,7 +38,7 @@ if (isset($_POST['submit-btn'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>User Registration</title>
+    <title>User Login</title>
 </head>
 <body>
     <?php
@@ -59,7 +59,7 @@ if (isset($_POST['submit-btn'])) {
             <input type="email" name="email" placeholder="Enter your email" required>
             <input type="password" name="password" placeholder="Esnter your password" required>
            
-            <input type="submit" name="submit-btn" class="btn" value="Register now">
+            <input type="submit" name="submit-btn" class="btn" value="login">
             <p>Don't have an account? <a href="register.php">register now</a></p>
         </form>
     </section>

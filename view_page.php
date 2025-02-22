@@ -65,7 +65,7 @@ if(isset($_POST['add_to_cart'])){
     <?php include 'header.php' ?>
     <div class="banner">
         <h1>product detail</h1>
-        <p>Lorem ipsum dolor sit amet consectuer adipising elit.</p>
+        <p>Bringing You the Freshest Blooms, Where Every Bloom Tells a Story!</p>
     </div>
     <?php
         if(isset($message)){

@@ -226,6 +226,7 @@ header{
     padding: 8%;
     display: flex;
     flex-direction: column;
+    
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -385,7 +386,7 @@ header{
     overflow: hidden;
 }
 
-.wrapper-one, .wrapper-two, .wrapper-three {
+.wrapper-one, .wrapper-two, .wrapper-three,.wrapper-four {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -397,26 +398,31 @@ header{
 }
 
 .wrapper-one {
-    background-image: url('../images/back-image.jpg');
+    background-image: url('../images/h5.jpg');
     animation: slideOneAnim 15s infinite;
 }
 
 .wrapper-two {
-    background-image: url('../images/orchid.jpg');
+    background-image: url('../images/h4.jpg');
     animation: slideTwoAnim 15s infinite;
 }
 
 .wrapper-three {
-    background-image: url('../images/test.jpg');
+    background-image: url('../images/hero1.jpg');
+    animation: slideThreeAnim 15s infinite;
+}
+.wrapper-four {
+    background-image: url('../images/hero4.jpg');
     animation: slideThreeAnim 15s infinite;
 }
 
 .wrapper-text {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2rem;
+    font-size: 4rem;
+    font-weight:lighter;
     color: #fff;
     text-align: center;
     text-transform: capitalize;
@@ -463,7 +469,7 @@ header{
 }
 
 .row .card{
-    background:url(../images/back-image.jpg);
+    
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -476,6 +482,7 @@ header{
     position: absolute;
     bottom: 30%;
     left: 10%;
+    color: #fff;
 }
 
 .row .card h1{
@@ -498,16 +505,21 @@ header{
 }
 
 .row .card:nth-child(1){
-    background:url(../images/orchid.jpg);
+    background:url(../images/img1.jpg);
+    background-size: cover;
 }
 
 .row .card:nth-child(2){
-    background:url(../images/test.jpg);
+    background:url(../images/img2.jpg);
+    background-size: cover;
 }
 
 .row .card:nth-child(3){
-    background:url(../images/back-image.jpg);
+    background:url(../images/img3.jpg);
+    background-size: cover;
 }
+
+
 
 
 /*-----categoris section--------*/
@@ -516,7 +528,7 @@ header{
 }
 
 .categories .box-container{
-    grid-template-columns: repeat(auto-fit,minmax(15rem,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
 }
 
 .categories .box-container .box{
@@ -547,7 +559,7 @@ header{
 
 /*-------banner3 styles -------*/
 .banner3{
-    background-image: url(../images/orchid.jpg);
+    background-image: url(../images/banner.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -649,7 +661,9 @@ header{
 }
 
 .banner,.banner-2{
-    background-image: url(../images/orchid.jpg);
+    background-image: url(../images/hero1.jpg);
+    background-size: cover;
+    object-fit: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -658,6 +672,7 @@ header{
     height: 500px;
     color: #fff;
 }
+
 
 .banner h1{
     font-size: 3rem;
@@ -744,14 +759,22 @@ header{
 .qty{
     display: flex;
     justify-content: space-between;
+    padding: 20px;
 }
 
 .qty input[type='number']{
-    width: 35%;
+    width: 25%;
 }
 
 .qty input[type='submit']{
-    width: 55%;
+    width: 25%;
+    cursor: pointer;
+    background: var(--pink);
+    box-shadow: none;
+    color: #fff;
+}
+.qty a{
+    width: 25%;
     cursor: pointer;
     background: var(--pink);
     box-shadow: none;
@@ -793,7 +816,9 @@ header{
 }
 
 .banner-2{
-    background-image: url(../images/test.jpg);
+    background-image: url(../images/couple.jpg);
+    background-size: cover;
+
 }
 
 .banner-2 h1{
@@ -806,7 +831,7 @@ header{
 }
 
 .services,.stylist,.testimonial-container{
-    background: url('../images/back-image.jpg');
+    
     background-size: cover;
     width: 100%;
     height: 100vh;
@@ -830,7 +855,7 @@ header{
 }
 
 .services .box-container .box i{
-    font-size: 0.5rem;
+    font-size: 1rem;
     position: relative;
     border-radius: 50%;
     color: #fff;
@@ -841,12 +866,12 @@ header{
 }
 
 .stylist{
-    background: url('../images/orchid.jpg');
+    /*background: url('../images/orchid.jpg');*/
     padding: 4% 0;
     height: auto;
 }
 
-.stylist h3{
+.stylist h4{
     color: var(--pink);
     text-transform: uppercase;
     margin: .5rem 0;
@@ -862,7 +887,8 @@ header{
 }
 
 .stylist .img-box img{
-    width: 100%;
+    width: 300px;
+    height: 400px;
 }
 .stylist .social-links{
     position: absolute;

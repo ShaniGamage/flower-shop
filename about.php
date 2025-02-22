@@ -25,16 +25,16 @@ if(!isset($user_id)){
 </head>
 <body>
     <?php include 'header.php' ?>
-    <div class="banner">
+    <div class="banner" style="background: url(./images/workers.jpg); background-size:cover;">
         <h1>about us</h1>
-        <p>Lorem ipsum dolor sit amet consectuer adipising elit.</p>
+        <p>Bringing You the Freshest Blooms, Where Every Bloom Tells a Story!</p>
     </div>
 
-    <div class="about">
+    <div class="about" >
         <div class="row">
             <div class="detail">
                 <h1>visit our beautiful showroom</h1>
-                <p>Our showroom is an expression what we love doing. being creative with floral and plant arrangemnets. whether you looking for a florist for your perfect wedding or just want to bla bla blaa</p>
+                <p>"Step into Petals and experience a world of beauty! 🌸✨ Visit our showroom to explore the freshest blooms, stunning arrangements, and elegant floral designs crafted just for you. Let nature’s charm inspire your special moments! 🌿💐"</p>
                 <a href="shop.php" class="btn2">shop now</a>
             </div>
             <!--<div class="img-box">
@@ -52,17 +52,17 @@ if(!isset($user_id)){
             <div class="box">
                 <i class="bi bi-percent"></i>
                 <h3>30% OFF + FREE SHIPPING</h3>
-                <p>starting at $36/mo, plus ,get $120 credit 1 year on regular orders</p>
+                <p>Bloom & Save Today! 🌿💐</p>
             </div>
             <div class="box">
                 <i class="bi bi-asterisk"></i>
                 <h3>Freshest blooms</h3>
-                <p>starting at $36/mo, plus ,get $120 credit 1 year on regular orders</p>
+                <p>🌸 Freshest Blooms, Handpicked for You! 🌿</p>
             </div>
             <div class="box">
                 <i class="bi bi-alarm"></i>
                 <h3>super flexible</h3>
-                <p>starting at $36/mo, plus ,get $120 credit 1 year on regular orders</p>
+                <p>"🌿 Super Flexible, Just Like Nature! 🌸✨"</p>
             </div>
         </div>
     </div>
@@ -73,7 +73,7 @@ if(!isset($user_id)){
         <div class="box-container">
             <div class="box">
                 <div class="img-box">
-                    <img src="images/orchid.jpg">
+                    <img src="images/designer.jpg">
                     <div class="social-links">
                         <i class="bi bi-instagram"></i>
                         <i class="bi bi-youtube"></i>
@@ -81,12 +81,12 @@ if(!isset($user_id)){
                         <i class="bi bi-tiktok"></i>
                     </div>
                 </div>
-                <h3>sara smith</h3>
-                <p>developer</p>
+                <h4>Sara Smith</h3>
+                <p>Floral Designer</p>
             </div>
             <div class="box">
                 <div class="img-box">
-                    <img src="images/orchid.jpg">
+                    <img src="images/manager.jpg">
                     <div class="social-links">
                         <i class="bi bi-instagram"></i>
                         <i class="bi bi-youtube"></i>
@@ -94,12 +94,12 @@ if(!isset($user_id)){
                         <i class="bi bi-tiktok"></i>
                     </div>
                 </div>
-                <h3>sara smith</h3>
-                <p>developer</p>
+                <h4>John Arther</h3>
+                <p>Stock Manager</p>
             </div>
             <div class="box">
                 <div class="img-box">
-                    <img src="images/orchid.jpg">
+                    <img src="images/sales.jpg">
                     <div class="social-links">
                         <i class="bi bi-instagram"></i>
                         <i class="bi bi-youtube"></i>
@@ -107,12 +107,12 @@ if(!isset($user_id)){
                         <i class="bi bi-tiktok"></i>
                     </div>
                 </div>
-                <h3>sara smith</h3>
-                <p>developer</p>
+                <h4>Noah De</h3>
+                <p>Sales Associate</p>
             </div>
         </div>
     </div>
-    <div class="testimonial-container">
+    <!--<div class="testimonial-container">
         <h1 class="title">what people say</h1>
         <div class="container">
             <div class="testimonial-item active">
@@ -133,7 +133,7 @@ if(!isset($user_id)){
             <div class="left-arrow" onclick="nextSlide()"><i class="bi bi-arrow-left"></i></div>
             <div class="right-arrow" onclick="prevSlide()"><i class="bi bi-arrow-right"></i></div>
         </div>
-    </div>
+    </div>-->
 
 
     <?php include 'footer.php' ?>

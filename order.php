@@ -25,9 +25,9 @@ if(!isset($user_id)){
 </head>
 <body>
     <?php include 'header.php' ?>
-    <div class="banner">
+    <div class="banner" style="background: url(./images/order.jpg); background-size:cover;">
         <h1>my orders</h1>
-        <p>Lorem ipsum dolor sit amet consectuer adipising elit.</p>
+        <p>Bringing You the Freshest Blooms, Where Every Bloom Tells a Story!</p>
     </div>
     
     <div class="order-section">

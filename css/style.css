@@ -32,7 +32,7 @@ a{
 }
 
 .form-container{
-    background-image: url('../images/back-image.jpg');
+    background: url(../images/back-image.jpg);
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -107,24 +107,25 @@ header{
 }
 
 .logo{
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
-    color: #aa4ff3;
+    color: var(--pink);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .logo span{
-    color: #e382c5;
+    color: #10403a;
 }
 
 .navbar a{
     margin: 0 1rem;
     font-size: 1rem;
-    color: #aa4ff3;
+    color:#10403a;
     text-transform: uppercase;
 }
 
 .navbar a:hover, .header .icons i:hover{
-    color: #c7b3f5;
+    color: #0b595f;
 }
 
 .header .icons{
@@ -135,7 +136,7 @@ header{
     margin-left: 1.2rem;
     font-size: 1.5rem;
     cursor: pointer;
-    color: #aa4ff3;
+    color: #10403a;
 }
 
 #menu-btn{
@@ -167,7 +168,7 @@ header{
 
 .header .user-box span{
     text-transform: capitalize;
-    color: #aa4ff3;
+    color: #10403a;
     font-size: 14px;
 }
 
@@ -177,7 +178,7 @@ header{
     height: 40px;
     padding: 0;
     cursor: pointer;
-    color: #aa4ff3;
+    color: #10403a;
     border-radius: 5px;
     border: none;
     outline: none;
@@ -189,7 +190,7 @@ header{
     text-align: center;
     text-transform: uppercase;
     margin: 2rem 0;
-    color: #545bba;
+    color: var(--pink);
 }
 
 .box-container{
@@ -222,7 +223,7 @@ header{
 }
 
 /*-------------add product page ------*/
-.add-product,.show-products,.update-container{
+.add-product,.update-container{
     background-image: url('../images/back-image.jpg');
     background-size: cover;
     background-repeat: no-repeat;

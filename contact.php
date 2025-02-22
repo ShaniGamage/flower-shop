@@ -41,8 +41,8 @@ if(isset($_POST['submit-btn'])){
 <body>
     <?php include 'header.php' ?>
     <div class="banner">
-        <h1>my contact</h1>
-        <p>Lorem ipsum dolor sit amet consectuer adipising elit.</p>
+        <h1>contact us</h1>
+        <p>Bringing You the Freshest Blooms, Where Every Bloom Tells a Story!</p>
     </div>
     <div class="help">
         <h1 class="title">need help</h1>
@@ -52,28 +52,28 @@ if(isset($_POST['submit-btn'])){
                     
                     <h2>address</h2>
                 </div>
-                <p>bla bla blaaa</p> 
+                <p>No.28, Stubbs place, colombo 05.</p> 
             </div>
             <div class="box">
                 <div>
                     
                     <h2>opening</h2>
                 </div>
-                <p>bla bla blaaa</p> 
+                <p>9.00AM - 8.00PM</p> 
             </div>
             <div class="box">
                 <div>
                     
                     <h2>our contact</h2>
                 </div>
-                <p>bla bla blaaa</p> 
+                <p>+94-778234567</p> 
             </div>
             <div class="box">
                 <div>
                     
                     <h2>special offer</h2>
                 </div>
-                <p>bla bla blaaa</p> 
+                <p>upto 40% discount on february</p> 
             </div>
         </div>
     </div>

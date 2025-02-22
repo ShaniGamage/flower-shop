@@ -10,7 +10,7 @@
 <body>
     <header class="header">
         <div class="flex">
-            <a href="admin.php" class="logo">petals</a>
+            <a href="admin.php" class="logo">petals🌸.</a>
 
             <nav class="navbar">
                 <a href="index.php">Home</a>

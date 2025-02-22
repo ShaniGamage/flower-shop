@@ -127,7 +127,7 @@ if(isset($_POST['add_product'])){
             </div>
             <div class="input-field">
                 <label>image</label>
-                <input type="file" name="image" accept="image/jpg, image/png, image/jpeg" required>
+                <input type="file" name="image" accept="image/jpg, image/png, image/jpeg, image/webp" required>
             </div>
             <input type="submit" name="add_product" value="add product" class="btn">
         </form>
