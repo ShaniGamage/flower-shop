@@ -89,7 +89,7 @@ if(isset($_POST['order_btn'])){
                 }
             }
             ?>
-            <span class="grand_total">Total amount payable : $ <?php echo $grand_total?>/=</span>
+            <span class="grand_total">Total amount payable : Rs. <?php echo $grand_total?>/=</span>
         </div>
         <form method="post">
             <div class="input-field">

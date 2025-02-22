@@ -40,7 +40,7 @@ if(isset($_POST['logout'])){
                     $total_pendings += $fetch_pendings['total_price'];
                 }
                 ?>
-                <h3>$<?php echo $total_pendings; ?></h3>
+                <h3>Rs.<?php echo $total_pendings; ?></h3>
                 <p>total pendings</p>
             </div>
 
@@ -53,7 +53,7 @@ if(isset($_POST['logout'])){
                     $total_completed += $fetch_completed['total_price'];
                 }
                 ?>
-                <h3>$<?php echo $total_completed; ?></h3>
+                <h3>Rs.<?php echo $total_completed; ?></h3>
                 <p>total completed</p>
             </div>
 

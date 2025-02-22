@@ -88,7 +88,7 @@ if(isset($_GET['delete_all'])){
                 <a href="view_page.php?pid=<?php echo $fetch_wishlist['pid']?>" class="bi bi-eye-fill"></a>
             </div>
             <img src="images/<?php echo $fetch_wishlist['image']?>">
-            <div class="price">$<?php echo $fetch_wishlist['price']?>/=</div>
+            <div class="price">Rs.<?php echo $fetch_wishlist['price']?>/=</div>
             <div class="name"><?php echo $fetch_wishlist['name']?></div>
            <input type="hidden" name="product_id" value="<?php echo $fetch_wishlist['pid']?>">
             <input type="hidden" name="product_name" value="<?php echo $fetch_wishlist['name']?>">

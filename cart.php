@@ -84,7 +84,7 @@ if(isset($_GET['delete_all'])){
                 <a href="view_page.php?pid=<?php echo $fetch_products['product_id']?>" class="bi bi-eye-fill"></a>
             </div>
             <img src="images/<?php echo $fetch_cart['image']?>">
-            <div class="price">$<?php echo $fetch_cart['price']?>/=</div>
+            <div class="price">Rs.<?php echo $fetch_cart['price']?>/=</div>
             <div class="name"><?php echo $fetch_cart['name']?></div>
             <form method="post">
                 <input type="hidden" name="update_quantity_id" value="<?php echo $fetch_cart['id']?>">

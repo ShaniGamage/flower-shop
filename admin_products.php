@@ -147,7 +147,7 @@ if(isset($_POST['add_product'])){
                     ?>
                     <div class="box">
                         <img src="images/<?php echo $fetch_products['image']; ?>" alt="Product Image">
-                        <p>price : $ <?php echo $fetch_products['price'];?></p>
+                        <p>price : Rs. <?php echo $fetch_products['price'];?></p>
                         <h4><?php echo $fetch_products['name'];?></h4>
                         <p class="detail"><?php echo $fetch_products['product_detail'];?></p>
                         <a href="admin_products.php?edit=<?php echo $fetch_products['product_id']?>" class="edit">edit</a>
